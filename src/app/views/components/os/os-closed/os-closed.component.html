@@ -1,0 +1,60 @@
+<div class='create'>
+    <h1>Ordens de Serviço Encerradas</h1>
+</div>
+
+<div class="mat-elevation-z8 container">
+    <table mat-table [dataSource]="dataSource">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="cliente">
+            <th id="mat-header-cell" *matHeaderCellDef> cliente </th>
+            <td headers="mat-cell" *matCellDef="let element"> {{element.cliente}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="tecnico">
+            <th id="mat-header-cell" *matHeaderCellDef> tecnico </th>
+            <td headers="mat-cell" *matCellDef="let element"> {{element.tecnico}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="abertura">
+            <th id="mat-header-cell" *matHeaderCellDef> Data de abertura </th>
+            <td headers="mat-cell" *matCellDef="let element"> {{element.dataAbertura}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="fechamento">
+            <th id="mat-header-cell" *matHeaderCellDef> Data de Fechamento </th>
+            <td headers="mat-cell" *matCellDef="let element"> {{element.dataFechamento}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="prioridade">
+            <th id="mat-header-cell" *matHeaderCellDef> Prioridade </th>
+            <td headers="mat-cell" *matCellDef="let element" class="{{ prioridade(element.prioridade) }}"> {{element.prioridade}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <th id="mat-header-cell" *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <th id="mat-header-cell" *matHeaderCellDef> Ações </th>
+            <td headers="mat-cell" *matCellDef="let element">
+                <a routerLink="../update/{{ element.id }}">
+                    <em id="edit" class="material-icons">edit</em>
+                </a>
+
+                <a routerLink="../view/{{ element.id }}">
+                    <em id="visibility" class="material-icons">visibility</em>
+                </a>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20, 50]" showFirstLastButtons></mat-paginator>
+</div>

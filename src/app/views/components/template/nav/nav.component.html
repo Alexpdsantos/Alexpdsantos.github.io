@@ -1,0 +1,32 @@
+<mat-drawer-container class="container" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side">
+        <mat-nav-list class="nav-list">
+            <a mat-list-item routerLink="/">
+                <em class="material-icons"> home</em>Home
+            </a>
+            <a mat-list-item routerLink="tecnicos">
+                <em class="material-icons"> work</em>Técnicos
+            </a>
+            <a mat-list-item routerLink="clientes">
+                <em class="material-icons"> person_search</em>Clientes
+            </a>
+            <a mat-list-item [matMenuTriggerFor]="menu">
+                <mat-menu #menu="matMenu">
+                    <a routerLink="os" mat-menu-item>Abertas ou Em Andamento</a>
+                    <a routerLink="os/closed" mat-menu-item>Encerradas</a>
+                </mat-menu>
+                <em class="material-icons">person_pin</em>Ordens de Serviço
+            </a>
+        </mat-nav-list>
+    </mat-drawer>
+
+    <div class="sidenav-content">
+        <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>
+            more_vert
+        </mat-icon>
+      </button>
+        <router-outlet></router-outlet>
+    </div>
+
+</mat-drawer-container>

@@ -1,0 +1,40 @@
+.create {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.create h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.create button {
+    width: 100%;
+    margin: 1rem auto;
+}
+
+.container {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+table {
+    width: 100%;
+}
+
+#edit {
+    margin-right: 1rem;
+    color: rgb(0, 255, 179);
+    border: 1px solid black;
+}
+
+#mat-header-cell {
+    text-align: left;
+}
+
+#delete {
+    color: rgb(247, 58, 68);
+    border: 1px solid black;
+}

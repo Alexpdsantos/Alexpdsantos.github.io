@@ -1,0 +1,14 @@
+mat-card {
+    width: 80%;
+    height: 50%;
+    margin: 1rem auto 0 auto;
+}
+
+mat-card-subtitle {
+    color: rgb(75, 15, 28);
+    margin: 0;
+    font-size: 1rem;
+    border: 3px solid rgb(116, 111, 115);
+    padding: 0 8%;
+    border-radius: 20px;
+}

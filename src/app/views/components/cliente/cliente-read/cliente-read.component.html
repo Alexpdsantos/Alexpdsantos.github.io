@@ -1,0 +1,52 @@
+<div class='create'>
+    <h1>Clientes</h1>
+    <button class="mat-elevation-z8" (click)="navigateToCreate()" mat-stroked-button color="accent">CRIAR NOVO CLIENTE</button>
+</div>
+
+<div class="mat-elevation-z8 container">
+    <table mat-table [dataSource]="dataSource">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+            <th id="mat-header-cell" *matHeaderCellDef> id </th>
+            <td headers="mat-cell" *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="nome">
+            <th id="mat-header-cell" *matHeaderCellDef> nome </th>
+            <td headers="mat-cell" *matCellDef="let element"> {{element.nome}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="cpf">
+            <th id="mat-header-cell" *matHeaderCellDef> cpf </th>
+            <td headers="mat-cell" *matCellDef="let element"> {{element.cpf}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="telefone">
+            <th id="mat-header-cell" *matHeaderCellDef> telefone </th>
+            <td headers="mat-cell" *matCellDef="let element"> {{element.telefone}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <th id="mat-header-cell" *matHeaderCellDef> Ações </th>
+            <td headers="mat-cell" *matCellDef="let element">
+
+                <a routerLink="update/{{ element.id }}">
+                    <em id="edit" class="material-icons">edit</em>
+                </a>
+
+                <a routerLink="delete/{{ element.id }}">
+                    <em id="delete" class="material-icons">delete</em>
+                </a>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20, 50]" showFirstLastButtons></mat-paginator>
+</div>
