@@ -5,7 +5,7 @@ mat-card {
 }
 
 mat-card-subtitle {
-    color: rgb(15, 75, 60);
+    color: rgb(240, 246, 245);
     margin: 0;
     font-size: 1rem;
     border: 3px solid rgb(116, 111, 115);
